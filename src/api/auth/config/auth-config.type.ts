@@ -1,0 +1,20 @@
+export type AuthConfig = {
+  secret: string;
+  expires?: string;
+  refreshSecret: string;
+  refreshExpires: string;
+  forgotSecret: string;
+  forgotExpires: string;
+  confirmEmailSecret: string;
+  confirmEmailExpires: string;
+  otp_ttl: number;
+  spotify_client_id: string;
+  spotify_client_secret: string;
+  spotify_redirect_uri: string;
+  tiktok_client_id: string;
+  tiktok_client_secret: string;
+  tiktok_redirect_uri: string;
+  apple_client_id: string;
+  apple_client_secret: string;
+  apple_redirect_uri: string;
+};
