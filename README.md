@@ -1,4 +1,4 @@
-# Pricepally partners API Documentation
+# OLAKZ API Documentation
 
 This is the basic documentation schema that our partners api and
 other documentations will be building on.
