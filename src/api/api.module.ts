@@ -3,8 +3,6 @@ import { AdminModule } from './admin/admin.module';
 import { AuthModule } from './auth/auth.module';
 import { BankDetailModule } from './bank_detail/bank_detail.module';
 import { CartModule } from './cart/cart.module';
-import { ChatModule } from './chat/chat.module';
-import { ChatReplyModule } from './chat_reply/chat_reply.module';
 import { CountryModule } from './country/country.module';
 import { CurrencyModule } from './currency/currency.module';
 import { FprModule } from './forget_password_request/fpr.module';
@@ -41,8 +39,6 @@ import { WalletModule } from './wallet/wallet.module';
     UtilsModule,
     BankDetailModule,
     WalletModule,
-    ChatModule,
-    ChatReplyModule,
     CountryModule,
     CurrencyModule,
     FprModule,
