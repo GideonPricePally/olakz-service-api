@@ -54,17 +54,16 @@ export class NotificationService {
     //   { attempts: 3, backoff: { type: 'exponential', delay: 60000 } },
     // );
     this.logger.log({ data });
-    try {
-      const res = await this.email_transporter.sendMail({
-        from: 'Microtask',
+    // Kick off the send but don’t await it
+    this.email_transporter
+      .sendMail({
+        from: 'Olakz',
         to: target,
         subject: header,
         html: htmlBody,
-      });
-      this.logger.log({ message: 'email response', res });
-    } catch (error) {
-      this.logger.error({ message: 'email error', error });
-    }
+      })
+      .then((res) => this.logger.log({ message: 'email response', res }))
+      .catch((err) => this.logger.error({ message: 'email error', err }));
   }
 
   private async send_sms(target: string, header: string, content: string) {
