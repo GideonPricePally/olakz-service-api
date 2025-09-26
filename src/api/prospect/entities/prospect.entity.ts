@@ -24,10 +24,10 @@ export class Prospect extends AbstractEntity {
   @Index('UQ_prospect_username', { where: '"deleted_at" IS NULL', unique: true })
   username: string;
 
-  @Column({ nullable: false, unique: true })
+  @Column({ nullable: false })
   first_name: string;
 
-  @Column({ nullable: false, unique: true })
+  @Column({ nullable: false })
   last_name: string;
 
   @Column({ nullable: false })
