@@ -1,15 +1,12 @@
-import { IsOptional, IsString } from 'class-validator';
+import { StringFieldOptional } from '@/decorators/field.decorators';
 
 export class UpdateProfileDto {
-  @IsString()
-  @IsOptional()
+  @StringFieldOptional()
   first_name: string;
 
-  @IsString()
-  @IsOptional()
+  @StringFieldOptional()
   updated_username: string;
 
-  @IsString()
-  @IsOptional()
+  @StringFieldOptional()
   last_name: string;
 }

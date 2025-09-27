@@ -1,11 +1,9 @@
-import { IsNotEmpty, IsString } from 'class-validator';
+import { StringField } from '@/decorators/field.decorators';
 
 export class CompleteSignupRequestDto {
-  @IsString()
-  @IsNotEmpty()
+  @StringField()
   prospect_id: string;
 
-  @IsString()
-  @IsNotEmpty()
+  @StringField()
   otp: string;
 }

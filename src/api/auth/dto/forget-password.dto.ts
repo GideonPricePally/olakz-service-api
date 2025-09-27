@@ -1,7 +1,6 @@
-import { IsNotEmpty, IsString } from 'class-validator';
+import { StringField } from '@/decorators/field.decorators';
 
 export class ForgetPasswordDto {
-  @IsString()
-  @IsNotEmpty()
+  @StringField()
   username: string;
 }

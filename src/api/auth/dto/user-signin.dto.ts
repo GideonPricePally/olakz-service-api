@@ -1,6 +1,7 @@
+import { StringField } from '@/decorators/field.decorators';
 import { Username } from '@/decorators/username.decorator';
 import { ApiProperty } from '@nestjs/swagger';
-import { IsNotEmpty, IsString, Validate } from 'class-validator';
+import { IsNotEmpty, Validate } from 'class-validator';
 
 export class UserSigninDto {
   @ApiProperty({ description: 'unique user username', type: String })
@@ -8,8 +9,6 @@ export class UserSigninDto {
   @IsNotEmpty()
   username: string;
 
-  @ApiProperty({ description: 'user password', type: String })
-  @IsString()
-  @IsNotEmpty()
+  @StringField({ description: 'user password' })
   password: string;
 }

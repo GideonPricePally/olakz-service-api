@@ -1,34 +1,26 @@
-import { StringField } from '@/decorators/field.decorators';
+import { BooleanField, StringField, StringFieldOptional } from '@/decorators/field.decorators';
 import { Username } from '@/decorators/username.decorator';
 import { ApiProperty } from '@nestjs/swagger';
-import { IsBoolean, IsNotEmpty, IsOptional, IsString, Validate } from 'class-validator';
+import { IsNotEmpty, Validate } from 'class-validator';
 
 export class UserSignupRequestDto {
-  @ApiProperty({ description: 'unique user firstname', type: String })
-  @StringField()
+  @StringField({ description: 'unique user firstname' })
   first_name: string;
 
-  @ApiProperty({ description: 'unique user lastname', type: String })
-  @StringField()
+  @StringField({ description: 'unique user lastname' })
   last_name: string;
 
-  @ApiProperty({ description: 'unique user username', type: String })
+  @ApiProperty({ description: 'unique user username' })
   @Validate(Username)
   @IsNotEmpty()
   username: string;
 
-  @ApiProperty({ description: 'user password', type: String })
-  @IsString()
-  @IsNotEmpty()
+  @StringField({ description: 'user password' })
   password: string;
 
-  @ApiProperty({ description: 'boolean agree to terms and conditions', type: String })
-  @IsBoolean()
-  @IsNotEmpty()
+  @BooleanField({ description: 'boolean agree to terms and conditions' })
   t_and_c: boolean;
 
-  @ApiProperty({ description: 'optional invite referral code ', type: String })
-  @IsString()
-  @IsOptional()
+  @StringFieldOptional({ description: 'optional invite referral code ' })
   referral_code?: string;
 }

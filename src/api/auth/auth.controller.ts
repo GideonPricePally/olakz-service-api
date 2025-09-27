@@ -18,7 +18,6 @@ import { UserSigninDto } from './dto/user-signin.dto';
   version: '1',
 })
 export class AuthController {
-  // private readonly authHandler = toNodeHandler(auth);
   constructor(private readonly authService: AuthService) {}
 
   @ApiPublic({
