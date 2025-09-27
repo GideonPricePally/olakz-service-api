@@ -6,6 +6,7 @@ import { CartModule } from './cart/cart.module';
 import { CountryModule } from './country/country.module';
 import { CurrencyModule } from './currency/currency.module';
 import { FprModule } from './forget_password_request/fpr.module';
+import { FormCollectionModule } from './form-collection/contact-message.module';
 import { FulfillmentModule } from './fulfillment/fulfillment.module';
 import { HealthModule } from './health/health.module';
 import { HomeModule } from './home/home.module';
@@ -50,6 +51,7 @@ import { WalletModule } from './wallet/wallet.module';
     TransactionModule,
     UploadModule,
     IdempotencyKeyModule,
+    FormCollectionModule,
   ],
 })
 export class ApiModule {}
